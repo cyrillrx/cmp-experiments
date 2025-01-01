@@ -1,19 +1,25 @@
-This is a Kotlin Multiplatform project targeting Android, iOS, Desktop, Server.
+# Sample Markdown Text Application
 
-* `/composeApp` is for code that will be shared across your Compose Multiplatform applications.
-  It contains several subfolders:
-  - `commonMain` is for code that’s common for all targets.
-  - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
-    For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
-    `iosMain` would be the right folder for such calls.
+This project is a sample application demonstrating the use of Jetpack Compose for rendering markdown and HTML text with various styles and annotations.
+The application includes custom composables for displaying annotated text, markdown text and HTML text.
 
-* `/iosApp` contains iOS applications. Even if you’re sharing your UI with Compose Multiplatform, 
-  you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
+## Features
 
-* `/server` is for the Ktor server application.
+- Display text with HTML-like styling (bold, italic, underline, strikethrough, links)
+- Handle user interactions with links
+- Customizable text styles and attributes
 
-* `/shared` is for the code that will be shared between all targets in the project.
-  The most important subfolder is `commonMain`. If preferred, you can add code to the platform-specific folders here too.
+## Project Structure
 
+- `AnnotatedText.kt`: Contains the `AnnotatedText` composable for displaying annotated text with clickable links.
+- `MarkdownText.kt`: Contains the `MarkdownText` composable for rendering markdown text using the `AnnotatedText` composable.
 
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)…
+## Code Overview
+
+### `AnnotatedText`
+
+A composable function that displays text with annotations and handles user interactions with links.
+
+### `MarkdownText`
+
+A composable function that parses a markdown string and displays it using the `AnnotatedText` composable.
